@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+    {% block main %}
+    {% if sendMethod =="get" %}
+        <form action="/quote" method="post">
+        <div class="form-group">
+            <input type="text" placeholder="Symbol" autofocus class="form-control" name="symbol"/>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Quote</button>
+
+        </form>
+    {% else %}
+        <p>
+            A share of {{ companyName }} costs {{ money }}.
+        </p>
+    {% endif %}
+
+    {% endblock %}

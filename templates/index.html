@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Symbol</th> <th>Name</th> <th> shares</th> <th>price</th> <th>total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in tableContent %}
+                <tr>
+                    {% for col in row %}
+                        <td>{{ col }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>CASH</td> <td> </td> <td> </td> <td> </td>    <td>{{ cash }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
